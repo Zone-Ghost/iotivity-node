@@ -29,7 +29,7 @@ function cleanup() {
 }
 
 function lightResourceOnRequest( request ) {
-	if ( request.type === "retrieve" || request.type === "observe" ) {
+	if ( request.type === "retrieverequest" || request.type === "observerequest" ) {
 		request.sendResponse( null );
 	}
 }

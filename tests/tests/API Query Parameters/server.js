@@ -31,8 +31,9 @@ function die( message ) {
 }
 
 function resourceOnRequest( request ) {
-	utils.assert( "strictEqual", request.type, "retrieve", "Server: Request is of type retrieve" );
-	if ( request.type === "retrieve" ) {
+	utils.assert( "strictEqual", request.type, "retrieverequest",
+		"Server: Request is of type retrieve" );
+	if ( request.type === "retrieverequest" ) {
 		request.sendResponse( _.extend( {}, request.target, {
 			properties: {
 				"How many angels can dance on the head of a pin?":

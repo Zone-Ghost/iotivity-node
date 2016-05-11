@@ -44,12 +44,12 @@ async.series( [
 			requestHandler = function( request ) {
 				switch ( requestIndex ) {
 
-				// Both the initial "create" request and the subsequent duplicate "create"
-				// request are handled by the same code. The expected behaviour is asserted by
-				// the client.
+				// Both the initial "createrequest" event and the subsequent duplicate
+				// "createrequest" event are handled by the same code. The expected behaviour is
+				// asserted by the client.
 				case 0:
 				case 1:
-					utils.assert( "strictEqual", request.type, "create",
+					utils.assert( "strictEqual", request.type, "createrequest",
 						"Server: " + ( requestIndex === 0 ? "First" : "Second" ) +
 						" request is 'create'" );
 					utils.assert( "deepEqual", request.res, {
@@ -75,7 +75,7 @@ async.series( [
 					break;
 
 				case 2:
-					utils.assert( "strictEqual", request.type, "delete",
+					utils.assert( "strictEqual", request.type, "deleterequest",
 						"Server: Third request is 'delete'" );
 					device.unregisterResource( resource ).then(
 						function() {
