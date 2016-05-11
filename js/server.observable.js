@@ -23,7 +23,7 @@ var intervalId,
 // Start iotivity and set up the processing loop
 iotivity.OCInit( null, 0, iotivity.OCMode.OC_SERVER );
 
-iotivity.OCSetDeviceInfo( { deviceName: "server.observable" } );
+iotivity.OCSetDeviceInfo( { deviceName: "server.observable", types: [] } );
 iotivity.OCSetPlatformInfo( {
 	platformID: "server.observe.sample",
 	manufacturerName: "iotivity-node"
